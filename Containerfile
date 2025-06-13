@@ -21,6 +21,7 @@ FROM ghcr.io/ublue-os/ucore:stable-zfs
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
+    --mount=type=cache,dst=/var/lib/dnf \
     --mount=type=tmpfs,dst=/tmp \
     /ctx/build.sh && \
     ostree container commit
