@@ -27,4 +27,5 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
 
 ### LINTING
 ## Verify final image and contents are correct.
-RUN bootc container lint
+# skipping etc-usretc as the base image ships a container policy that raises this error.
+RUN bootc container lint --skip etc-usretc
